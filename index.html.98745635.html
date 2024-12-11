@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет3</title>
+    <html lang="kk">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Жүктеу жолақтары (ортақ контейнер)</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #0015ff;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .main-container {
+                width: 100%;
+                max-width: 900px;
+                margin: 50px auto;
+                background-color: rgb(0, 50, 252);
+                border: 1px solid #0922ff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgb(51, 0, 255);
+            }
+
+            .progress-bar {
+            
+                width: 100%;
+   
+                background-color: #e0e0e0;
+  
+                border-radius: 8px;
+  
+                margin: 10px 0;
+  
+                height: 20px;
+  
+                overflow: hidden;
+  
+                position: relative;
+
+            }
+
+
+            .progress-bar span {
+
+                display: block;
+
+                height: 100%;
+
+                border-radius: 10px;
+
+                width: 0%;
+
+                transition: width 0.3s ease-in-out; /* Для плавной анимации */
+
+            }
+
+            .progress-container:hover .progress-bar span {
+    
+                width: 100%; /* Полосы заполняются */
+
+            }
+
+
+/* Цвета для разных полос */
+
+
+            .bar-blue span {
+    
+                background-color: #0004ff;
+
+            }
+
+
+            .bar-green span {
+ 
+                background-color: rgb(11, 204, 27);
+
+            }
+
+
+
+            .bar-yellow span {
+
+                background-color: rgb(255, 255, 0);
+
+            }
+
+
+            .bar-red span {
+
+                background-color: rgb(255, 0, 0);
+
+            }
+
+
+            .bar-purple span {
+
+                background-color: #ff00e6;
+
+            }
+
+
+            
+
+            @keyframes load-reverse {
+                0% {
+                    width: 0%;
+                }
+                50% {
+                    width: 100%;
+                }
+                100% {
+                    width: 0%;
+                }
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: rgb(255, 0, 0);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .card {
+                width: calc(33.33% - 30px);
+                margin: 15px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+                transition: transform 0.2s, box-shadow 0.2s;
+                position: relative;
+                opacity: 0.7;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                opacity: 0.7;
+            }
+
+            .card-content {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 10px;
+            }
+
+            .card-content h3 {
+                font-size: 16px;
+                color: #666;
+                margin: 5px 0;
+                font-style: italic;
+            }
+
+            .card-content p {
+                font-size: 14px;
+                color: #777;
+                flex-grow: 1;
+            }
+
+            .read-more {
+                text-decoration: none;
+                padding: 10px;
+                background-color: #007bff;
+                color: white;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 16px;
+                display: block;
+                transition: background-color 0.3s;
+            }
+
+            .read-more:hover {
+                background-color: #0056b3;
+            }
+
+            .full-page-block {
+                width: 85.6%;
+                padding: 30px;
+                background-color: dodgerblue;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            @media (max-width: 768px) {
+                .card {
+                    width: calc(50% - 30px);
+                }
+            }
+
+            @media (max-width: 480px) {
+                .card {
+                    width: 100%;
+                }
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f8ff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            /* Контейнер стилі */
+
+            .share-container {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: #e0e0e0;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+
+            .share-container:hover {
+                transform: scale(1.1);
+            }
+            /* Әлеуметтік желілер тізімі */
+
+            .share-menu {
+                position: absolute;
+                bottom: 110%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                padding: 10px;
+                z-index: 100;
+            }
+
+            .share-container:hover .share-menu {
+                display: flex;
+            }
+
+            .share-menu a {
+                text-decoration: none;
+                color: #007bff;
+                font-size: 14px;
+                margin: 5px 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .share-menu a img {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+            /* Бөлісу белгішесі */
+
+            .share-icon {
+                font-size: 24px;
+                color: #007bff;
+            }
+
+            .ul {
+                width: 100%;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                background-image: linear-gradient(to right, #ff0000, #ff0000);
+                padding: 10px 0;
+                margin: auto;
+                border-bottom: 7px solid #0000ff;
+                max-width: 100%;
+            }
+
+            nav a {
+                color: #2e2e2e;
+                padding: 12px 20px;
+                /* Уменьшены отступы для более компактного вида */
+                text-decoration: none;
+                font-weight: bold;
+                font-family: 'Arial', sans-serif;
+                font-size: 1.1em;
+                transition: background 0.3s, color 0.3s;
+                text-align: center;
+                /* Центрируем текст внутри ссылки */
+            }
+
+            nav a:hover {
+                background-color: #f8f9fa;
+                color: cornflowerblue;
+                border-radius: 5px;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0px;
+                padding: 0px;
+            }
+
+           
+
+            .menu {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menu li {
+                position: relative;
+                margin: 0 45px;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: white;
+                padding: 10px 67.4px;
+                display: block;
+            }
+
+            .menu a:hover {
+                background-color: ;
+                border-radius: 0px;
+            }
+
+            .submenu {
+                list-style: none;
+                position: absolute;
+                top: 95%;
+                left: 0;
+                background-color: rgb(255, 30, 30);
+                margin: 0px;
+                padding: 0px;
+                display: none;
+                z-index: 1000;
+            }
+
+            .submenu li {
+                margin: 0;
+            }
+
+            .submenu a {
+                padding: 10px 15px;
+                color: white;
+                display: block;
+            }
+
+            .submenu a:hover {
+                background-color: ;
+            }
+
+            .dropdown:hover .submenu {
+                display: block;
+            }
+            /* Сырғып шығатын меню стилі */
+
+            .menu-button {
+                position: fixed;
+                top: 0px;
+                left: 85px;
+                padding: 7px 15px;
+                font-size: 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1000;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .side-menu {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                width: 300px;
+                height: 100%;
+                background-color: rgb(21, 0, 255);
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+                transition: left 0.3s ease;
+                padding: 20px;
+                z-index: 999;
+            }
+
+            .menu-toggle:checked ~ .side-menu {
+                left: 0;
+            }
+
+            .side-menu ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .side-menu ul li {
+                margin: 15px 0;
+            }
+
+            .side-menu ul li a {
+                text-decoration: none;
+                color: white;
+                font-size: 16px;
+            }
+
+            footer {
+                background-image: linear-gradient(to right, #d12427, #3300ff);
+                /* Same gradient as navigation */
+                color: white;
+                text-align: center;
+                padding: 20px;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            footer a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-size: 14px;
+            }
+
+            footer a:hover {
+                text-decoration: underline;
+            }
+
+            footer p {
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+
+    <body style="font-family: Arial, sans-serif; background-color: cornflowerblue;">
+        <!-- Сырғып шығатын меню батырмасы -->
+        
+        <div class="main-container">
+            <div class="progress-container">
+                <!-- Existing Progress Bars -->
+                <div class="progress-bar bar-blue"><span></span></div>
+                <div class="progress-bar bar-green"><span></span></div>
+                <div class="progress-bar bar-yellow"><span></span></div>
+                <div class="progress-bar bar-red"><span></span></div>
+                <!-- New Progress Bar -->
+                <div class="progress-bar bar-purple"><span></span></div>
+            </div>
+        </div>
+        <div class="full-page-block">
+            <div class="container">
+                <div class="card"> <img src="file:///Users/nurganatkalymzan/Downloads/collabo202311.jpg">
+                    <div class="card-content">
+                        <h3>、目指すはシー</h3>
+                        <p>と駆け上がった今、目指すはシーズン優勝とチャンピオンシップ優勝の2冠
+                            そして『日本一』から『世界一』へ 日本だけに留まらずアジア地域を中心に選</p> <a href="https://satbayev.university/ru/news/satbayev-university-i-penn-state-ukreplyayut-sotrudnichestvo" class="read-more">チームへと KADOKAWA DREAMS</a> </div>
+                </div>
+                <div class="card"> <img src="file:///Users/nurganatkalymzan/Downloads/28674-50-843f1c442705654f71f2cad0cef285b2-977x852.jpg.webp" alt="Ernest Hemingway">
+                    <div class="card-content">
+                        <h3>留まらずア</h3>
+                        <p>、目指すはシーズン優勝とチャンピオンシッ</p> <a href="https://satbayev.university/ru/news/satbayev-university-i-gorodskoy-universitet-gonkonga-zaklyuchili-soglashenie-o-sozdanii-innovatsionnogo-strategicheskogo-partnerstva" class="read-more">チームへと KADOKAWA DREAMS</a> </div>
+                </div>
+                <div class="card"> <img src="file:///Users/nurganatkalymzan/Downloads/28674-50-b4a4e3fb9a2dcd73a12f7975df36c637-752x502.jpg.webp" alt="J.R.R. Tolkien">
+                    <div class="card-content">
+                        <h3>日本一』から『世界一』へ</h3>
+                        <p>地域を中心に</p> <a href="https://satbayev.university/ru/news/11-noyabrya-v-satbayev-university-sostoitsya-vstrecha-ministra-nauki-i-vysshego-obrazovaniya-rk-sayasata-nurbek-s-naseleniem-goroda-almaty" class="read-more">チームへと KADOKAWA DREAMS</a> </div>
+                </div>
+                <div class="card"> <img src="file:///Users/nurganatkalymzan/Downloads/POP_SP-DANCER_SOUTA-640x427.jpg" alt="Malcolm X">
+                    <div class="card-content">
+                        <h3>ーズン優勝とチ</h3>
+                        <p>け上がった今、目指すは</p> <a href="https://satbayev.university/ru/news/v-satbayev-university-startovala-konferentsiya-po-ortopedii-i-travmatologii-obedinivshaya-vrachey-uchenykh-i-inzhenerov-so-vsego-mira" class="read-more">チームへと KADOKAWA DREAMS</a> </div>
+                </div>
+                <div class="card"> <img src="file:///Users/nurganatkalymzan/Downloads/HATTRICK_ROUND02_KISA_KD-640x427.jpg" alt="George Orwell">
+                    <div class="card-content">
+                        <h3>け上がった今、目</h3>
+                        <p>そして『日本一』</p> <a href="https://satbayev.university/ru/news/simvol-znaniy-v-nadezhnykh-rukakh-satbayev-university-vstrechaet-yubileynoe-pokolenie-pervokursnikov" class="read-more">チームへと KADOKAWA DREAMS</a> </div>
+                </div>
+                <div class="card"> <img src="file:///Users/nurganatkalymzan/Downloads/HATTRICK_ROUND01_DAICHI_KDa-640x427.jpg" alt="Albert Einstein">
+                    <div class="card-content">
+                        <h3>目指すは</h3>
+                        <p>優勝とチャンピオンシップ優勝の2冠</p> <a href="https://satbayev.university/ru/news/sozdavaya-tsentralnoaziatskiy-nauchnyy-khab-satbayev-university-vyigral-v-konkurse-tematicheskikh-koordinatorov-horizon-europe-kazakhstan" class="read-more">チームへと KADOKAWA DREAMS</a> </div>
+                </div>
+            </div>
+            <div class="share-container">
+                <div class="share-icon">➤</div>
+                <div class="share-menu">
+                    <a href="https://www.instagram.com/satbayev_university/"><img src="https://satbayev.university/files/img/university/sidenav/inst-logo.png" alt="Facebook">Instagram</a>
+                    <a href="https://www.facebook.com/satbayevuniversity/"><img src="https://satbayev.university/files/img/university/sidenav/fc-logo.png" alt="Twitter"> Facebook</a>
+                    <a href="https://www.youtube.com/user/TheKazntu/videos"><img src="https://satbayev.university/files/img/university/sidenav/yt-logo.png" alt="Google+"> Youtube</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; kadokawa dreams news</p>
+            <p> <a href="https://satbayev.university/ru/contacts">Contact Us</a> | <a href="https://satbayev.university/ru/privacy-policy">Privacy Policy</a> | <a href="https://satbayev.university/ru/terms-of-use">Terms of Use</a> </p>
+        </footer>
+    </body>
+
+    </html>

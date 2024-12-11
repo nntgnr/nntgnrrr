@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Музыки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            background-image: url('file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-3-2.jpg'); /* Укажите путь к вашему фону */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4c0dea;
+            color: white;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #3888f1; 
+        }
+
+        tr:nth-child(even) {
+            background-color: #f82c2c; 
+        }
+
+        .music-player {
+            margin-top: 20px;
+        }
+
+        .music-player audio {
+            width: 100%;
+            height: 40px;
+        }
+
+        /* Верхний футер */
+        .top-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #612ff7;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .top-footer img {
+            height: 50px;
+        }
+
+        /* Футер внизу */
+        .bottom-footer {
+            background-color: #e32020;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Верхний футер с логотипом -->
+    <div class="top-footer">
+        <img src="file:///Users/nurganatkalymzan/Downloads/HPwKaCd3_400x400.jpg" alt="Логотип" /> <!-- Укажите путь к вашему логотипу -->
+        <div>Контакты | О нас</div>
+    </div>
+
+    <div class="container">
+        <h1></h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Название Музыки</th>
+                    <th>Исполнитель</th>
+                    <th>Прослушать</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I</td>
+                    <td>Тема любви</td>
+                    <td>2　KISA</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song1.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>II</td>
+                    <td>Гроза</td>
+                    <td>77　KELO</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song2.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>III</td>
+                    <td>Песня ветра</td>
+                    <td>99　ITTA</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song3.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IV</td>
+                    <td>Танец огня</td>
+                    <td>1　Ryo</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song4.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>V</td>
+                    <td>Скрижали времени</td>
+                    <td>3　Daichi</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song5.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VI</td>
+                    <td>Загадка ночи</td>
+                    <td>颯希(SATSUKI)</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song6.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VII</td>
+                    <td>Полет</td>
+                    <td>6　syuichi</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song7.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VIII</td>
+                    <td>Мечта</td>
+                    <td>87　柳 環翔</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song8.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IX</td>
+                    <td>Зимний вечер</td>
+                    <td>8　JURIKA</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song9.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>X</td>
+                    <td>Тени прошлого</td>
+                    <td>10　HINATA.M</td>
+                    <td>
+                        <div class="music-player">
+                            <audio controls>
+                                <source src="music/song10.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Нижний футер -->
+    <div class="bottom-footer">
+        <p>&copy; 2024 Kadokawa Dreams. </p>
+    </div>
+
+</body>
+</html>

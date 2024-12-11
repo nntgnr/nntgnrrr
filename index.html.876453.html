@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadokawa Dreams</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, red, blue);
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 0, 0, 0.5);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .marquee span {
+            display: inline-block;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-section {
+            margin: 20px auto;
+            max-width: 800px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            overflow: hidden;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .animated-blocks {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .animated-block {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(255, 0, 0);
+            border: 2px solid white;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: pulse 1.5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animated-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(164, 3, 3, 0.7);
+            position: sticky;
+            bottom: 0;
+            color: rgba(252, 0, 0, 0.573);
+        }
+
+        .progress-bars {
+            margin: 20px auto;
+            max-width: 1220px;
+            background: #ececec;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            height: 20px;
+        }
+        .progress-bar div {
+            height: 100%;
+            width: 0;
+            background-color: #1e00ff; /* По умолчанию синий */
+            transition: width 0.3s ease;
+        }
+        .progress-bar:nth-child(2) div {
+            background-color: #00ff00; /* Зеленый */
+        }
+        .progress-bar:nth-child(3) div {
+            background-color: #00aeff; /* Голубой */
+        }
+        .progress-bar:nth-child(4) div {
+            background-color: #e1ff00; /* Желтый */
+        }
+        .progress-bar:nth-child(5) div {
+            background-color: #ff0000; /* Красный */
+        }
+        .progress-bar:nth-child(1) div { width: 0%; }
+        .progress-bar:nth-child(2) div { width: 20%; }
+        .progress-bar:nth-child(3) div { width: 40%; }
+        .progress-bar:nth-child(4) div { width: 60%; }
+        .progress-bar:nth-child(5) div { width: 80%; }
+        .progress-bars:hover .progress-bar div {
+            animation: loading 2s linear forwards;
+        }
+        @keyframes loading {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="file:///Users/nurganatkalymzan/Downloads/HPwKaCd3_400x400.jpg" alt="Logo">
+    </header>
+
+    <div class="marquee">
+        <span>Kadokawa Dreams &#x2022; Kadokawa Dreams &#x2022; Kadokawa Dreams &#x2022;</span>
+    </div>
+
+    <div class="content">
+        <div class="image-section">
+            <img src="file:///Users/nurganatkalymzan/Downloads/fit=cover,w=800,h=800-5.avif" alt="Large Image">
+        </div>
+
+        <p>世界中に 「夢を叶える」を繋げていく。 チーム名DREAMSのごとく「夢」を叶えるため全国から集まったメンバー。
+            名も無い原石だったメンバーはD.LEAGUE 3シーズンをかけその才能を発揮し22-23 SEASONでは悲願の初優勝を成し遂げました。
+            日本一へと駆け上がった今</p>
+
+        <div class="animated-blocks">
+            <div class="animated-block"><img src="file:///Users/nurganatkalymzan/Downloads/fit=cover,w=800,h=800.avif" alt="Image 1"></div>
+            <div class="animated-block"><img src="file:///Users/nurganatkalymzan/Downloads/fit=cover,w=800,h=800-4.avif" alt="Image 2"></div>
+        </div>
+
+        <!-- Полосы загрузки -->
+        <div class="progress-bars">
+            <div class="progress-bar"><div></div></div>
+            <div class="progress-bar"><div></div></div>
+            <div class="progress-bar"><div></div></div>
+            <div class="progress-bar"><div></div></div>
+            <div class="progress-bar"><div></div></div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Kadokawa Dreams
+    </footer>
+</body>
+</html>
