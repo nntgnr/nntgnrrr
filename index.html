@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KADOKAWA DREAMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #D62828;
+            background-image: url('file:///Users/nurganatkalymzan/Downloads/abstraktsiia-svechenie-1.webp');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-attachment: fixed; 
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(6, 6, 207, 0.8); 
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 28px;
+            font-weight: bold;
+            color: #D62828;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .nav-links a {
+            background-color: #D62828;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            background-color: #F4A261;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown .dropbtn {
+            background-color: #D62828;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #F4A261;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #FFFFFF;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #D62828;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #F4A261;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 200px;
+            margin-left: 20px;
+            background-color: #3B4D83;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            background-color: #1518ba;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sidebar li:hover {
+            background-color: #1F2A4C;
+        }
+        .sidebar li a {
+            color: #D62828;
+            text-decoration: none;
+        }
+
+        .main-content {
+            flex: 1;
+            text-align: center;
+        }
+        .main-content img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 3px solid #D62828;
+        }
+
+        .description {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #FFFFFF;
+            background-color: rgba(59, 77, 131, 0.8); 
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .music-player {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .play-button {
+            background-color: #D62828;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .play-button:hover {
+            background-color: #F4A261;
+        }
+
+        .thumbnail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .thumbnail {
+            position: relative;
+            background-color: #2015bc;
+            border: 2px solid #D62828;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .thumbnail:hover {
+            background-color: #3B4D83;
+            transform: scale(1.05);
+        }
+
+        .image-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .side-thumbnails {
+            display: flex;
+            flex-direction: column;
+            margin: 0 15px;
+        }
+
+        .side-thumbnails img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border: 2px solid #D62828;
+            border-radius: 4px;
+        }
+
+        .large-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 3px solid #D62828;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="file:///Users/nurganatkalymzan/Downloads/HPwKaCd3_400x400.jpg" alt="Логотип">
+            <span>KADOKAWA DREAMS</span>
+        </div>
+        <div class="nav-links">
+            <a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.46345231.html">the tickets</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.888.html">Songs</a>
+                    <a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.98745635.html">News</a>
+                    <a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.2534524.html">Tickets</a>
+                    <a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.0098.html">Performances</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="image-wrapper">
+                <div class="side-thumbnails">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-3.jpg" alt="Маленькое изображение слева">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-4.jpg" alt="Маленькое изображение слева снизу">
+                </div>
+
+                <img class="large-image" src="file:///Users/nurganatkalymzan/Downloads/image.jpg" alt="Большое изображение">
+
+                <div class="side-thumbnails">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-3.jpg" alt="Маленькое изображение справа">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-4.jpg" alt="Маленькое изображение справа снизу">
+                </div>
+            </div>
+
+            <div class="description">
+                <p>KADOKAWA DREAMS（カドカワ ドリームズ）は株式会社KADOKAWAが2020年10月に結成したダンスチームでD.LEAGUEにチームオーナーとして参画するチームの一つ。ディレクターはダンスアーティストのKEITA TANAKA。</p>
+            </div>
+
+            <div class="music-player">
+                <audio id="videoPlayer" src="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.09090.html"></audio>
+                <button class="play-button" onclick="document.getElementById('audioPlayer').play()">song</button>
+            </div>
+
+            <div class="thumbnail-container">
+                <div class="thumbnail">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-3.jpg" alt="Маленькое изображение 1">
+                </div>
+                <div class="thumbnail">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-5.jpg" alt="Маленькое изображение 2">
+                </div>
+                <div class="thumbnail">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/Kadokawa-Dreams-4.jpg" alt="Маленькое изображение 3">
+                </div>
+                <div class="thumbnail">
+                    <img src="file:///Users/nurganatkalymzan/Downloads/1682653649-2054263337.jpg.webp" alt="Маленькое изображение 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <ul>
+                <li><a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.888.html">songs</a></li>
+                <li><a href="file:///Users/nurganatkalymzan/Downloads/Kadokawa%20Dreams.html">store</a></li>
+                <li><a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.86754321.html">members</a></li>
+                <li><a href="file:///Users/nurganatkalymzan/Desktop/nntgnr2/index.html.09090.html">the best performances</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
